@@ -11,8 +11,9 @@ import java.util.Date;
 @AllArgsConstructor
 public class UserCodeDto {
 
-    Long id;
-    UserDto user;
-    String code;
-    Date sentDate;
+    private Long id;
+    private UserDto user;
+    private String code;
+    private Date sentDate;
+    private boolean confirm;
 }
