@@ -1,6 +1,6 @@
 package kg.itschool.demoauthorization.models.dtos;
 
-import kg.itschool.demoauthorization.models.entitys.UserCode;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import kg.itschool.demoauthorization.models.enums.Status;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +12,8 @@ import java.util.Date;
 public class CodeEnterAttemptDto {
 
     private Long id;
+    @JsonFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     private Date attemptDate;
-    private UserCode userCode;
+    private UserCodeDto userCode;
     private Status status;
 }

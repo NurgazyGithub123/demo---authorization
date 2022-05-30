@@ -10,19 +10,18 @@ import javax.validation.constraints.Email;
 @Data
 @Entity
 @Table(name = "tb_user")
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
 
     @Id
     @GeneratedValue
-    Long id;
-    String name;
-    String phone;
+    private Long id;
+    private String name;
+    private String phone;
     @Email(message = "Email is not valid")
-    String email;
+    private String email;
     @ManyToOne
     @JoinColumn(name = "role_id")
-    Role role;
+    private Role role;
     @Column
-    boolean confirm;
+    private boolean confirm;
 }

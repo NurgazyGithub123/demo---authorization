@@ -13,6 +13,9 @@ import kg.itschool.demoauthorization.services.UserCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
+import java.util.Date;
+
 @Service
 public class UserCodeServiceImpl implements UserCodeService {
 
@@ -30,8 +33,10 @@ public class UserCodeServiceImpl implements UserCodeService {
     }
 
     @Override
-    public UserCodeDto findByUser(UserDto userDto) {
-        UserCode userCode = userCodeDao.findByUser(userMapper.toEntity(userDto));
+    public UserCodeDto findByUserAndExtDate(UserDto userDto, Date date) {
+        UserCode userCode = userCodeDao.findByUserAndExpirationDateAfter(userMapper.toEntity(userDto), date);
         return userCodeMapper.toDto(userCode);
     }
+
+
 }

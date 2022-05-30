@@ -7,13 +7,12 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @Builder
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserDto {
 
-    Long id;
-    String name;
-    String phone;
-    String email;
-    RoleDto role;
-    boolean confirm;
+    private Long id;
+    private String name;
+    private String phone;
+    private String email;
+    private RoleDto role;
+    private boolean confirm;
 }

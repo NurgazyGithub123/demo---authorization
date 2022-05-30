@@ -1,7 +1,9 @@
 package kg.itschool.demoauthorization.models.entitys;
 
 import kg.itschool.demoauthorization.models.enums.Status;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,5 +20,6 @@ public class CodeEnterAttempt {
     @ManyToOne
     @JoinColumn(name = "user_code_id")
     private UserCode userCode;
+    @Enumerated(EnumType.STRING)
     private Status status;
 }

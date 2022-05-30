@@ -1,7 +1,9 @@
 package kg.itschool.demoauthorization.models.entitys;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,16 +16,13 @@ public class UserCode {
     @Id
     @GeneratedValue
     private Long id;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
-    User user;
-
-    String code;
-
-    @JsonFormat(pattern = "dd.MM.yyyy HH:mm:ss")
-    Date sentDate;
-
+    private User user;
+    private String code;
+    private Date sentDate;
+    @Column
+    private Date expirationDate;
     private boolean confirm;
 
 

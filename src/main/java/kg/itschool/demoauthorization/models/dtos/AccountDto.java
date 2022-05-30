@@ -7,11 +7,10 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @Builder
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class AccountDto {
 
-    Long id;
-    String login;
-    String password;
-    UserDto user;
+    private Long id;
+    private String login;
+    private String password;
+    private UserDto user;
 }

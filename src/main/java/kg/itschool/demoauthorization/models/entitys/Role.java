@@ -1,7 +1,9 @@
 package kg.itschool.demoauthorization.models.entitys;
 
 import kg.itschool.demoauthorization.models.enums.RoleType;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
